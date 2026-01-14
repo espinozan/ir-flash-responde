@@ -5,6 +5,7 @@ color 0A
 :: ===============================
 :: Auto-elevación a Administrador
 :: ===============================
+
 @echo off
 net session >nul 2>&1
 if %errorlevel% neq 0 (
