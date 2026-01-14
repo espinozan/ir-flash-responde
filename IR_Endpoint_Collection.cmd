@@ -2,6 +2,17 @@
 title INCIDENT RESPONSE COLLECTION - MUNICIPAL
 color 0A
 
+:: ===============================
+:: Auto-elevación a Administrador
+:: ===============================
+@echo off
+net session >nul 2>&1
+if %errorlevel% neq 0 (
+    echo [+] Elevating privileges...
+    powershell -Command "Start-Process '%~f0' -Verb RunAs"
+    exit /b
+)
+
 REM ===============================
 REM INCIDENT RESPONSE COLLECTION
 REM Windows CMD / Batch
